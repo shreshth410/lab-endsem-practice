@@ -81,4 +81,13 @@ void insert(Node** root, int val){
     }
 
     (*root)->height = MAX(height((*root)->left), height((*root)->right)) + 1;
+
+}
+
+void inorder(Node* root){
+    if (!root) return;
+
+    inorder(root->left);
+    printf("%d\t", root->data);
+    inorder(root->right);
 }
